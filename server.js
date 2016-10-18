@@ -59,10 +59,10 @@ app.use(expressValidator({
         // The birthday is given as an example.
 
         isStuNum: function(value) {
-            return value.search( /TODO/ ) !== -1;
+            return value.search( /\d{9}|\d{10}/ ) !== -1;
         },
         isPhone: function(value) {
-            return value.search( /TODO/ ) !== -1;
+            return value.search( /\d{10}|\d{3}[\-]\d{3}[\-]\d{4}|[\(]\d{3}[\)]\d{3}[\-]\d{4}|[\(]\d{3}[\)]\d{7}/ ) !== -1;
         },
         isBirthday: function(value) {
             return value.search( /(\d{4})-(\d{2})-(\d{2})$/ ) !== -1;
